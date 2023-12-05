@@ -1,0 +1,286 @@
+<form [formGroup]="showBookingdetailsForm" class="form-horizontal" >
+  <div class="callout callout-info">
+    <h4><i class="fas fa-info"></i> Ticket Booking Details:</h4>
+    
+    </div>
+  <!--TICKET BOOKING BOX  START-->
+
+        <div class="card card-primary">
+          <div class="card-header">
+            <h3 class="card-title">Ticket Booking Details</h3>
+          </div> <!-- /.card-header End -->
+          
+          <div class="card-body">
+            <div class="form-row">
+              <div class="form-group col-md-4">
+                <label class="control-label col-sm-4" >User Name:</label>
+                <div class="col-sm-8">
+                  <input type="text" formControlName="username" class="form-control"  placeholder="username" >
+                </div>
+              </div>
+              <div class="form-group col-md-4">
+                  <label class="control-label col-sm-4" >User Email:</label>
+                  <div class="col-sm-8">
+                    <input type="email" class="form-control"  placeholder="Enter email" formControlName="userEmail">
+                  </div>
+                </div> 
+                <div class="form-group col-md-4">
+                  <label class="control-label col-sm-4" >Trip Type:</label>
+                  <div class="col-sm-8">
+                      <input type="text" formControlName="triptype" class="form-control"  placeholder="triptype" >
+                  </div>
+                </div>  
+              </div> 
+              <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label class="control-label col-sm-4" >Discuont:</label>
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control"  placeholder="discountcode" formControlName="discountcode">
+                    </div>
+                  </div>
+                  <div class="form-group col-md-4">
+                      <label class="control-label col-sm-4" >OnWard Seat:</label>
+                      <div class="col-sm-8">
+                        <input type="email" class="form-control"  placeholder="Enter email" formControlName="selectedseatonward">
+                      </div>
+                    </div> 
+                    <div class="form-group col-md-4">
+                      <label class="control-label col-sm-4" >Return Seat:</label>
+                      <div class="col-sm-8">
+                        <input type="email" class="form-control"  placeholder="Enter email" formControlName="selectedseatreturn">
+                      </div>
+                    </div>  
+              </div> 
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                  <label class="control-label col-sm-4" >OnWard Date:</label>
+                  <div class="col-sm-8">
+                    <input type="text" class="form-control"   formControlName="onwarddate">
+                  </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label class="control-label col-sm-4" >OnWard Seat:</label>
+                    <div class="col-sm-8">
+                      <input type="email" class="form-control"  formControlName="returndate">
+                    </div>
+                  </div> 
+                  <div class="form-group col-md-4">
+                    <label class="control-label col-sm-4" >Status:</label>
+                    <div class="col-sm-8">
+                      <input type="email" class="form-control"   formControlName="status">
+                    </div>
+                  </div>  
+            </div> 
+
+
+            <div class="form-row">
+              <div class="form-group col-md-4">
+                <label class="control-label col-sm-4" >Amount:</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control"  formControlName="amount">
+                </div>
+              </div>
+              <div class="form-group col-md-4">
+                  <label class="control-label col-sm-4" >Return Amount</label>
+                  <div class="col-sm-8">
+                    <input type="email" class="form-control"  formControlName="returnAmount">
+                  </div>
+                </div> 
+                <div class="form-group col-md-4">
+                  <label class="control-label col-sm-4" >Status:</label>
+                  <div class="col-sm-8">
+                    <input type="email" class="form-control"   formControlName="totalamount">
+                  </div>
+                </div>  
+          </div> 
+
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label class="control-label col-sm-4" >PNR Number:</label>
+              <div class="col-sm-8">
+                <input type="email" class="form-control"   formControlName="pnrnumber">
+              </div>
+            </div> 
+            <div class="form-group col-md-4">
+              <label class="control-label col-sm-4">From:</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control"  formControlName="fromplace">
+              </div>
+            </div>
+            <div class="form-group col-md-4">
+                <label class="control-label col-sm-4" >To:</label>
+                <div class="col-sm-8">
+                  <input type="email" class="form-control"  formControlName="toplace">
+                </div>
+              </div> 
+              
+          </div> 
+
+
+
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label class="control-label col-sm-4" >Meal Type:</label>
+              <div class="col-sm-8">
+                <input type="email" class="form-control"   formControlName="mealtype">
+              </div>
+            </div> 
+            <div class="form-group col-md-4">
+              <label class="control-label col-sm-4">Retun MealType:</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control"  formControlName="returnMealtype">
+              </div>
+            </div>
+            <div class="form-group col-md-4">
+                <label class="control-label col-sm-4" >Booked Date:</label>
+                <div class="col-sm-8">
+                  <input type="email" class="form-control"  formControlName="bookeddate">
+                </div>
+              </div> 
+              
+          </div> 
+
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label class="control-label col-sm-4" >AirLine:</label>
+              <div class="col-sm-8">
+                <input type="email" class="form-control"   formControlName="airlinename">
+              </div>
+            </div> 
+            <div class="form-group col-md-4">
+              <label class="control-label col-sm-4">Retun AirLine:</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control"  formControlName="returnAirlinename">
+              </div>
+            </div>
+            <div class="form-group col-md-4">
+                <label class="control-label col-sm-4" >No of Seats:</label>
+                <div class="col-sm-8">
+                  <input type="email" class="form-control"  formControlName="numberofseats">
+                </div>
+              </div> 
+              
+          </div>
+
+
+          </div> <!-- card body end -->
+
+
+          <div class="card-footer">
+            <!-- <button type="submit" class="btn btn-info">Sign in</button>
+            <button type="submit" class="btn btn-default float-right">Cancel</button> -->
+          </div>
+          <!-- /.card-footer -->
+
+
+          </div>  <!-- card info end -->
+
+<!--PASSENGER DETAILS GRID END-->
+
+        
+
+        <!-- /.card -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+        <!-- </div> -->
+          <!-- Angular Format to fill nested form
+            showBookingdetailsForm.get('passengerdetails')['controls']
+        <table>  
+            <tr formArrayName="passengerdetails" *ngFor="let cd of  userFormGroups.controls;let i=index;">  
+                <td formGroupName={{i}}>  
+                    
+                    <input  type="text" formControlName="name" placeholder="Name" />  
+                    <input  type="text" formControlName="age" placeholder="age" />  
+                    <input  type="text" formControlName="mealpreference" placeholder="Meal Preference" />  
+                </td>  
+            </tr>  
+            <tr>  
+                <td>  
+                    <input type="submit" value="Click Me" />  
+                </td>  
+            </tr>  
+        </table>
+        -->
+        
+       
+
+
+
+<!--PASSENGER DETAILS GRID START-->
+
+        <div class="card-info">
+          <div class="card-header">
+            <h2 class="card-title">Passenger Details</h2>
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <table class="table table-bordered"> 
+              <thead>
+                <tr>
+                  <th >Name</th>
+                  <th>Meal Preference</th>
+                  <th>Age</th>
+                  <th >User Email</th>
+                  <th >Seat Number</th>
+                  <th >PNR</th>
+                  
+                  
+                </tr>
+              </thead> 
+              <tbody formArrayName="passengerdetails" *ngFor="let cd of  userFormGroups.controls;let i=index;">
+              <tr formGroupName={{i}}>  
+                  <td >  
+                      <!-- <input  type="text" formControlName="name" placeholder="Name" />   -->
+                      {{cd.value.name}}
+                  </td>
+                  <td>
+                    {{cd.value.mealpreference}}
+                  </td> 
+                  <td>
+                    <!-- <input  type="text" formControlName="age" placeholder="Age" />   -->
+                    {{cd.value.age}}
+                  </td> 
+                  <td>
+                    {{cd.value.usermail}}
+                  </td> 
+                  <td>
+                    {{cd.value.selectedseatnumber}}
+                  </td> 
+                  <td>
+                    {{cd.value.pnrnumber}}
+                  </td> 
+              </tr>  
+              
+            </tbody>
+          </table>
+
+          </div>
+          <!-- /.card-body -->
+          <div class="card-footer clearfix">
+            
+          </div>
+        </div>
+<!--PASSENGER DETAILS GRID END-->
+
+
+        <!-- </div>  -->
+  </form>
+  

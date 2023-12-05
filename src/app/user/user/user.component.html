@@ -1,0 +1,52 @@
+<form [formGroup]="SearchForm" (ngSubmit)="onSubmit()">
+    <div class="form-row">
+        
+        
+        <div class="form-group col-md-4">
+           
+            <input type="text" formControlName="emailid" class="form-control"  placeholder="Enter Email Id"/>
+            
+            <div *ngIf="submitted && f.emailid.invalid && f.emailid.errors" class="text-danger">
+                <div *ngIf="f.emailid.errors.required">Email is required</div>
+                <div *ngIf="f.emailid.errors.email">Email must be a valid email address</div>
+            </div>
+
+        </div>
+        <div class="form-group col-md-4">
+            <button type="submit" class="btn btn-primary mb-2">Search User</button>
+        </div>
+        <div class="form-group col-md-4"></div>
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th style="width: 23%">UserID</th>
+                <th style="width: 23%">Username</th>
+                <th style="width: 23%">UserEmail</th>
+                <th style="width: 23%">Role</th>
+                <th style="width: 8%"></th>
+                
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let userDetails of users">
+                <td>{{userDetails.userID}}</td>
+                <td>{{userDetails.username}}</td>
+                <td>{{userDetails.userEmail}}</td>
+                <td>{{userDetails.role}}</td>
+                <td style="white-space: nowrap">
+                    <a routerLink="ShowUser/{{userDetails.userID}}" class="btn btn-sm btn-primary mr-1">ViewDetails</a>
+                    
+                </td>
+            </tr>
+            <tr *ngIf="!users">
+                <td colspan="4" class="text-center">
+                    <span class="spinner-border spinner-border-lg align-center">aa</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+   
+</form>
+

@@ -1,0 +1,43 @@
+<form [formGroup]="showUserForm" class="form-horizontal" >
+    <div class="form-group">
+      <label class="control-label col-sm-2" >User ID:</label>
+      <div class="col-sm-10">
+        <input type="text" formControlName="userID" class="form-control"  placeholder="Enter User ID" >
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" >Password:</label>
+      <div class="col-sm-10">          
+        <input type="password" class="form-control"  placeholder="Enter password" formControlName="password">
+      </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" >User Name:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control"  placeholder="Enter email" formControlName="username">
+        </div>
+      </div>  
+      <div class="form-group">
+        <label class="control-label col-sm-2" >User Email:</label>
+        <div class="col-sm-10">
+          <input type="email" class="form-control"  placeholder="Enter email" formControlName="userEmail">
+        </div>
+      </div>  
+      <div class="form-group">
+        <label class="control-label col-sm-2" >Role:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control"  placeholder="Enter email" formControlName="role">
+        </div>
+      </div>  
+      <div class="form-group">
+        <div>
+          <label class="control-label col-sm-2" ></label>
+        </div>
+        <div class="col-sm-10">
+          <a routerLink="/User" class="btn btn-sm btn-primary  col-sm-2">Back</a>
+        </div>
+      
+                    
+      </div>  
+   
+  </form>

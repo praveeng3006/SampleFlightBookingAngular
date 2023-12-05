@@ -1,0 +1,251 @@
+<div class="callout callout-info">
+    <h5><i class="fas fa-info"></i> Book Flight</h5>
+</div>
+
+    <form [formGroup]="showBookingdetailsForm">
+
+        <div class="row">
+            <div class="col-md-6">
+              <!-- Widget: Onward Journey Box -->
+              <div class="card card-widget widget-user-2 shadow-sm">
+                <!-- Add the bg color to the header using any of the bg-* classes -->
+                <div class="widget-user-header bg-warning">
+                  <div class="widget-user-image">
+                    <img class="img-circle elevation-2" src="../../../assets/adminlte/dist/img/AirIndia.gif" alt="User Avatar">
+                  </div>
+                  <!-- /.widget-user-image -->
+                  <h3 class="widget-user-username">
+                    <!-- <i class="fa fa-plane"></i> -->
+                     {{userSelectedFlightsData.fromPlace}} to {{userSelectedFlightsData.toPlace}}</h3>
+                  
+                </div>
+                <div class="card-footer p-0">
+                  <ul class="nav flex-column">
+                    <li class="nav-item">
+                      <a href="#" class="nav-link" style="font-weight: 400;font-size: 1rem;">
+                       <h5> AirLine : {{userSelectedFlightsData.onwardAirlineName}} <span class="float-right"> FlightNumber : {{userSelectedFlightsData.onWardFlightNumber}}</span>
+                       </h5>
+                      </a>
+                    
+                    </li>
+                    <li class="nav-item">
+                      <a  class="nav-link">
+                        <div class="row">
+                          <div class="col-md-4">  
+                              <h5>{{userSelectedFlightsData.onWardDate | date:'fullDate'}}
+                              </h5>
+                              <h3> {{userSelectedFlightsData.OnwardStartTime | date:'shortTime'}}</h3> 
+                          </div>
+                          <div class="col-md-4">
+                            <i class="fa fa-plane fa-3x"></i>
+                          </div>
+                          <div class="col-md-4">
+                            <h5>{{userSelectedFlightsData.OnwardEndTime | date:'fullDate'}}
+                            </h5>
+                            <h3> {{userSelectedFlightsData.OnwardEndTime | date:'shortTime'}}</h3> 
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+
+                  </ul>
+                </div>
+              </div>
+              <!-- /.widget-user -->
+            </div>
+            <!-- /.col -->
+            <div class="col-md-6">
+              <!-- Widget: Return Journey Card -->
+              <div class="card card-widget widget-user-2 shadow-sm">
+                <!-- Add the bg color to the header using any of the bg-* classes -->
+                <div class="widget-user-header bg-warning">
+                  <div class="widget-user-image">
+                    <img class="img-circle elevation-2" src="../../../assets/adminlte/dist/img/AirIndia.gif" alt="AirPlaneLogo">
+                  </div>
+                  <!-- /.widget-user-image -->
+                  <h3 class="widget-user-username">
+                    <!-- <i class="fa fa-plane"></i> -->
+                     {{userSelectedFlightsData.toPlace}} to {{userSelectedFlightsData.fromPlace}}</h3>
+                </div>
+                <div class="card-footer p-0">
+                  <ul class="nav flex-column">
+                    <li class="nav-item">
+                      <a href="#" class="nav-link" style="font-weight: 400;font-size: 1rem;">
+                       <h5> AirLine : {{userSelectedFlightsData.returnAirlineName}} <span class="float-right"> FlightNumber : {{userSelectedFlightsData.returnFlightNumber}}</span>
+                       </h5>
+                      </a>
+                    
+                    </li>
+                    <li class="nav-item">
+                      <a  class="nav-link">
+                        <div class="row">
+                          <div class="col-md-4">  
+                              <h5>{{userSelectedFlightsData.returnDate | date:'fullDate'}}
+                              </h5>
+                              <h3> {{userSelectedFlightsData.ReturnStartTime | date:'shortTime'}}</h3> 
+                          </div>
+                          <div class="col-md-4">
+                            <i class="fa fa-plane fa-3x"></i>
+                          </div>
+                          <div class="col-md-4">
+                            <h5>{{userSelectedFlightsData.ReturnEndTime | date:'fullDate'}}
+                            </h5>
+                            <h3>{{userSelectedFlightsData.ReturnEndTime | date:'shortTime'}}</h3> 
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- /.widget-user -->
+            </div>
+
+          </div>
+          <!-- /.row -->
+  
+
+
+        
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <div class="info-box mb-3">
+                    <span class="info-box-icon bg-info elevation-1"><i class="fas fa-rupee-sign"></i></span>
+      
+                    <div class="info-box-content">
+                      <span class="info-box-text">Total Fare for 
+                        <span class="right badge badge-danger">{{userSelectedFlightsData.passengersCount}}</span>
+                        Passengers
+                        
+                    </span>
+                      <span class="info-box-number">
+                        Total Fare:{{userSelectedFlightsData.totalAmount}}
+                        <br/>
+                        Onward Fare:{{userSelectedFlightsData.onwardAmount}}
+                        <br/>
+                        Return Fare:{{userSelectedFlightsData.returnAmount}}
+                      </span>
+                    </div>
+                    <!-- /.info-box-content -->
+                  </div>
+            </div>
+            <div class="form-group col-md-4">
+                  <div class="alert alert-success alert-dismissible" *ngIf="showAlertBox">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <h5><i class="icon fas fa-check"></i> Success!</h5>
+                    Message : {{AlertMessage}}
+                  </div>
+            </div>
+            <div class="form-group col-md-4">
+                <br/>
+                <br/>
+               
+            </div>
+        </div>
+       <!-- /.row -->
+       <!--row-->
+       <div class="form-row">
+        <div class="form-group col-md-4">
+          <label class="control-label col-sm-4" >User Name:</label>
+          <div class="col-sm-8">
+            <input type="text" formControlName="username" class="form-control"  placeholder="username" >
+            <div *ngIf="submitted && f.username.invalid && f.username.errors" class="text-danger">
+              <div *ngIf="f.username.errors.required">username is required!!</div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-md-4">
+          <label class="control-label col-sm-4" >User Email:</label>
+          <div class="col-sm-8">
+            <input type="email" class="form-control"  placeholder="Enter email" formControlName="userEmail">
+            <div *ngIf="submitted && f.userEmail.invalid && f.userEmail.errors" class="text-danger">
+              <div *ngIf="f.userEmail.errors.required">Email is required!!</div>
+              <div *ngIf="f.userEmail.errors.email">Email must be a valid email address!!</div>
+          </div>
+          </div>
+        </div>
+        <div class="form-group col-md-4">
+          <button type="submit" (click)="onSubmit('Save')" class="btn btn-primary mb-2" [disabled]="DisableSaveButton">Save</button>
+           
+        </div>
+    </div>
+   <!-- /.row -->
+       
+
+
+<!--PASSENGER DETAILS GRID START-->
+
+<div class="card-info">
+  <div class="card-header">
+    <h2 class="card-title">Passenger Details</h2>
+  </div>
+  <!-- /.card-header -->
+  <div class="card-body">
+    <table class="table table-bordered"> 
+      <thead>
+        <tr>
+          <th >Name</th>
+          <th>Meal Preference</th>
+          <th>Age</th>
+          <th >User Email</th>
+          <th >Seat Number</th>
+         
+          
+          
+        </tr>
+      </thead> 
+      <tbody formArrayName="passengerdetails" *ngFor="let cd of  userFormGroups.controls;let i=index;">
+      <tr formGroupName={{i}}>  
+          <td >  
+               <input  type="text" formControlName="name" placeholder="Name" />  
+              <!-- {{cd.value.name}} -->
+          </td>
+          <td>
+            <!-- <input  type="text" formControlName="mealpreference" placeholder="Meal Preference" />  -->
+            <select formControlName="mealpreference">
+              <option disabled>Select Meal Type</option>
+              <option>Choose Meal Type</option>
+              <option *ngFor="let mOpt of mealPrefOptions">{{mOpt}}</option>
+            </select>
+          </td> 
+          <td>
+            <input  type="text" formControlName="age" placeholder="Age" />  
+           
+          </td> 
+          <td>
+            <input  type="text" formControlName="usermail" placeholder="Email" /> 
+           
+          </td> 
+          <td>
+            <input  type="text" formControlName="selectedseatnumber" placeholder="Seat Number" /> 
+           
+          </td> 
+           
+      </tr>  
+      
+    </tbody>
+  </table>
+
+  </div>
+  <!-- /.card-body -->
+  <div class="card-footer clearfix">
+    
+  </div>
+</div>
+<!--PASSENGER DETAILS GRID END-->
+
+
+
+
+
+    </form>
+<form>
+    
+
+
+
+
+  
+
+
+        
